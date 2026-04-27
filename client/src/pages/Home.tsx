@@ -108,6 +108,7 @@ export default function Home() {
             title="Annabelle"
             description="Une application web interactive développée avec React. Ce projet m'a permis de maîtriser les hooks React, la gestion d'état et les composants réutilisables. L'interface est intuitive et responsive sur tous les appareils."
             technologies={['React', 'JavaScript', 'CSS', 'Responsive Design']}
+            link="https://will17lr.github.io/annabelle-site-v2/"
             github="https://github.com/will17lr"
             image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop"
           />
@@ -143,8 +144,8 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="mailto:contact@example.com"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-700 rounded-lg hover:bg-gray-100 transition-colors font-medium"
+              href="mailto:will@example.com"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-700 rounded-lg hover:bg-blue-100 transition-colors font-medium"
             >
               <Mail size={20} />
               Me contacter par email
