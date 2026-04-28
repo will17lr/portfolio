@@ -110,7 +110,7 @@ export default function Home() {
             description="Une application web interactive développée avec React. Ce projet m'a permis de maîtriser les hooks React, la gestion d'état et les composants réutilisables. L'interface est intuitive et responsive sur tous les appareils."
             technologies={['React', 'JavaScript', 'CSS', 'Responsive Design']}
             link="https://will17lr.github.io/annabelle-site-v2/"
-            github="https://github.com/will17lr"
+            github="https://github.com/will17lr/annabelle-site-v2"
             image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop"
           />
 
@@ -119,17 +119,19 @@ export default function Home() {
             title="La Hora"
             description="Un projet fullstack complet combinant frontend et backend. Site complet avec interface admin, gestion des réservations (CRUD), API REST et envoi d'emails via Nodemailer. Ce projet démontre ma capacité à créer une application web complète et fonctionnelle."
             technologies={['Node.js', 'Express', 'MongoDB', 'API REST', 'Nodemailer']}
-            github="https://github.com/will17lr"
+            link="https://will17lr.github.io/La_Hora/"
+            github="https://github.com/will17lr/La_Hora"
             image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop"
             reverse
           />
 
           {/* Project 3: ToDo React */}
           <ProjectCard
-            title="ToDo React"
-            description="Une application de gestion de tâches dynamique développée avec React. Inclut la gestion complète des tâches (CRUD), des filtres avancés et l'intégration d'une API externe. Ce projet illustre ma maîtrise de React et de la manipulation d'APIs."
-            technologies={['React', 'JavaScript', 'API externe', 'CRUD', 'Filtres']}
-            github="https://github.com/will17lr"
+            title="Renter Car"
+            description="Une application de location de voitures développée avec React et une API backend. Inclut la gestion complète des réservations (CRUD), des filtres avancés et une interface utilisateur intuitive. Ce projet illustre ma maîtrise de React et de l'intégration d'APIs."
+            technologies={['React', 'JavaScript', 'API REST', 'CRUD', 'Filtres']}
+            link="https://will17lr.github.io/Renter-car/"
+            github="https://github.com/will17lr/Renter-car"
             image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop"
           />
 
@@ -139,7 +141,7 @@ export default function Home() {
             description="Un mini-jeu Memory interactif développé avec JavaScript. Ce jeu démontre ma capacité à créer des interactions dynamiques, gérer la logique de jeu et créer une expérience utilisateur engageante. Testez votre mémoire avec ce jeu classique revisité !"
             technologies={['JavaScript', 'HTML5', 'CSS3', 'Logique de Jeu', 'Interactivité']}
             link="https://will17lr.github.io/memory/"
-            github="https://github.com/will17lr"
+            github="https://github.com/will17lr/memory"
             image="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&h=300&fit=crop"
             reverse
           />
