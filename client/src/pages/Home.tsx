@@ -120,7 +120,7 @@ export default function Home() {
             description="Un projet fullstack complet combinant frontend et backend. Site complet avec interface admin, gestion des réservations (CRUD), API REST et envoi d'emails via Nodemailer. Ce projet démontre ma capacité à créer une application web complète et fonctionnelle."
             technologies={['Node.js', 'Express', 'MongoDB', 'API REST', 'Nodemailer']}
             github="https://github.com/will17lr"
-            image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=500&h=300&fit=croph=300https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=500&h=300&fit=cropfit=crop"
+            image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop"
             reverse
           />
 
@@ -131,6 +131,17 @@ export default function Home() {
             technologies={['React', 'JavaScript', 'API externe', 'CRUD', 'Filtres']}
             github="https://github.com/will17lr"
             image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop"
+          />
+
+          {/* Project 4: Memory Game */}
+          <ProjectCard
+            title="Memory - Mini Jeu"
+            description="Un mini-jeu Memory interactif développé avec JavaScript. Ce jeu démontre ma capacité à créer des interactions dynamiques, gérer la logique de jeu et créer une expérience utilisateur engageante. Testez votre mémoire avec ce jeu classique revisité !"
+            technologies={['JavaScript', 'HTML5', 'CSS3', 'Logique de Jeu', 'Interactivité']}
+            link="https://will17lr.github.io/memory/"
+            github="https://github.com/will17lr"
+            image="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&h=300&fit=crop"
+            reverse
           />
         </div>
       </section>
