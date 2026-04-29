@@ -132,7 +132,7 @@ export default function Home() {
             technologies={['React', 'JavaScript', 'API REST', 'CRUD', 'Filtres']}
             link="https://will17lr.github.io/Renter-car/"
             github="https://github.com/will17lr/Renter-car"
-            image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop"
+            image="/images/renter-car-project.png"
           />
 
           {/* Project 4: Memory Game */}
@@ -161,7 +161,7 @@ export default function Home() {
                   <h3 className="text-heading-md text-gray-900">Développeur Web</h3>
                   <p className="text-body text-blue-700 font-medium">Citopia</p>
                 </div>
-                <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-small font-medium">Sept. 2025 - Oct. 2025</span>
+                <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-small font-medium">Sept. 2025 - Nov. 2025</span>
               </div>
               <ul className="space-y-2 text-body text-gray-600">
                 <li>• Intégration d'interfaces depuis Figma</li>
