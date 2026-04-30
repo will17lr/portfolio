@@ -11,7 +11,7 @@
     "check": "tsc --noEmit",
     "format": "prettier --write .",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist/public --repo https://github.com/will17lr/portfolio.git"
+    "deploy": "gh-pages -d dist/public -r https://github.com/will17lr/portfolio.git"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
