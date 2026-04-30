@@ -132,7 +132,7 @@ export default function Home() {
             technologies={['React', 'JavaScript', 'API REST', 'CRUD', 'Filtres']}
             link="https://will17lr.github.io/Renter-car/"
             github="https://github.com/will17lr/Renter-car"
-            image="/images/renter-car-project.png"
+            image={`${import.meta.env.BASE_URL}images/renter-car-project.png`}
           />
 
           {/* Project 4: Memory Game */}
