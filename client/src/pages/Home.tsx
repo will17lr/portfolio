@@ -125,7 +125,7 @@ export default function Home() {
             reverse
           />
 
-          {/* Project 3: ToDo React */}
+          {/* Project 3: Renter Car */}
           <ProjectCard
             title="Renter Car"
             description="Une application de location de voitures développée avec React et une API backend. Inclut la gestion complète des réservations (CRUD), des filtres avancés et une interface utilisateur intuitive. Ce projet illustre ma maîtrise de React et de l'intégration d'APIs."
