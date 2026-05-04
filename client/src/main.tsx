@@ -10,7 +10,7 @@ const umamiEndpoint = (
 const umamiWebsiteId =
   import.meta.env.VITE_UMAMI_WEBSITE_ID ||
   import.meta.env.VITE_ANALYTICS_WEBSITE_ID ||
-  "cb97b827-4f7b-4530-bbd5-b7ad58babe13";
+  "2b5b7b0d-7914-4f90-a6f0-f2a45dcaf732";
 
 if (import.meta.env.PROD && umamiWebsiteId && typeof document !== "undefined") {
   const script = document.createElement("script");
