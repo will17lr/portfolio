@@ -24,11 +24,11 @@ export default function ProjectCard({
       {/* Image Section */}
       {image && (
         <div className={`${reverse ? 'md:order-2' : ''}`}>
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg h-64 md:h-80 flex items-center justify-center overflow-hidden shadow-lg">
+          <div className="flex items-center justify-center">
             <img
               src={image}
               alt={title}
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-contain rounded-lg"
             />
           </div>
         </div>
