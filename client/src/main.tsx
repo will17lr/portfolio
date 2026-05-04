@@ -26,5 +26,14 @@ if (endpoint && websiteId && typeof document !== "undefined") {
   script.setAttribute("data-website-id", websiteId);
   document.head.appendChild(script);
 }
+
+if ("serviceWorker" in navigator && import.meta.env.PROD) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).catch(() => {
+      // La PWA reste utilisable si l'enregistrement est bloque par le navigateur.
+    });
+  });
+}
+
 // ⚔️ rendu React (OBLIGATOIRE)
 createRoot(document.getElementById("root")!).render(<App />);

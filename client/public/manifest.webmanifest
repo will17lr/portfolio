@@ -1,0 +1,31 @@
+{
+  "name": "Portfolio Wilfried Vogler",
+  "short_name": "Will Vogler",
+  "description": "Portfolio de Wilfried Vogler, développeur web et web mobile junior.",
+  "lang": "fr",
+  "start_url": "/portfolio/",
+  "scope": "/portfolio/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#1d4ed8",
+  "categories": ["portfolio", "developer", "productivity"],
+  "icons": [
+    {
+      "src": "images/pwa-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/pwa-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "images/pwa-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
