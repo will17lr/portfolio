@@ -121,7 +121,7 @@ export default function Home() {
             technologies={['Node.js', 'Express', 'MongoDB', 'API REST', 'Nodemailer']}
             link="https://will17lr.github.io/La_Hora/"
             github="https://github.com/will17lr/La_Hora"
-            image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop"
+            image={`${import.meta.env.BASE_URL}images/la-hora-project.png`}
             reverse
           />
 
@@ -142,8 +142,7 @@ export default function Home() {
             technologies={['JavaScript', 'HTML5', 'CSS3', 'Logique de Jeu', 'Interactivité']}
             link="https://will17lr.github.io/memory/"
             github="https://github.com/will17lr/memory"
-            image="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&h=300&fit=crop"
-            reverse
+            image={`${import.meta.env.BASE_URL}images/memory-project.png`}
           />
         </div>
       </section>
