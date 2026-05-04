@@ -258,7 +258,7 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section className="py-20 bg-gray-50">
+      <section id="parcours" className="scroll-mt-16 py-20 bg-gray-50">
         <div className="container" data-reveal>
           <h2 className="text-heading-lg text-gray-900 mb-12">Expérience</h2>
           
