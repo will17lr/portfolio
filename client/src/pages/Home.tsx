@@ -111,7 +111,7 @@ export default function Home() {
             technologies={['React', 'JavaScript', 'CSS', 'Responsive Design']}
             link="https://will17lr.github.io/annabelle-site-v2/"
             github="https://github.com/will17lr/annabelle-site-v2"
-            image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop"
+            image={`${import.meta.env.BASE_URL}images/annabelle-project.png`}
           />
 
           {/* Project 2: La Hora */}
@@ -143,6 +143,7 @@ export default function Home() {
             link="https://will17lr.github.io/memory/"
             github="https://github.com/will17lr/memory"
             image={`${import.meta.env.BASE_URL}images/memory-project.png`}
+            reverse
           />
         </div>
       </section>
