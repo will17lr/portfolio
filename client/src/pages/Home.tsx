@@ -111,7 +111,7 @@ export default function Home() {
             technologies={['React', 'JavaScript', 'CSS', 'Responsive Design']}
             link="https://will17lr.github.io/annabelle-site-v2/"
             github="https://github.com/will17lr/annabelle-site-v2"
-            image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop"
+            image={`${import.meta.env.BASE_URL}images/annabelle-project.png`}
           />
 
           {/* Project 2: La Hora */}
@@ -121,11 +121,11 @@ export default function Home() {
             technologies={['Node.js', 'Express', 'MongoDB', 'API REST', 'Nodemailer']}
             link="https://will17lr.github.io/La_Hora/"
             github="https://github.com/will17lr/La_Hora"
-            image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop"
+            image={`${import.meta.env.BASE_URL}images/la-hora-project.png`}
             reverse
           />
 
-          {/* Project 3: ToDo React */}
+          {/* Project 3: Renter Car */}
           <ProjectCard
             title="Renter Car"
             description="Une application de location de voitures développée avec React et une API backend. Inclut la gestion complète des réservations (CRUD), des filtres avancés et une interface utilisateur intuitive. Ce projet illustre ma maîtrise de React et de l'intégration d'APIs."
@@ -142,7 +142,7 @@ export default function Home() {
             technologies={['JavaScript', 'HTML5', 'CSS3', 'Logique de Jeu', 'Interactivité']}
             link="https://will17lr.github.io/memory/"
             github="https://github.com/will17lr/memory"
-            image="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&h=300&fit=crop"
+            image={`${import.meta.env.BASE_URL}images/memory-project.png`}
             reverse
           />
         </div>
