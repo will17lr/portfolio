@@ -138,8 +138,8 @@ export default function Home() {
           {/* Project 4: Memory Game */}
           <ProjectCard
             title="Memory - Mini Jeu"
-            description="Un mini-jeu Memory interactif développé avec JavaScript. Ce jeu démontre ma capacité à créer des interactions dynamiques, gérer la logique de jeu et créer une expérience utilisateur engageante. Testez votre mémoire avec ce jeu classique revisité !"
-            technologies={['JavaScript', 'HTML5', 'CSS3', 'Logique de Jeu', 'Interactivité']}
+            description="Un mini-jeu Memory interactif développé avec React et TypeScript. Ce jeu démontre ma capacité à créer des composants dynamiques, gérer la logique de jeu et proposer une expérience utilisateur engageante. Testez votre mémoire avec ce jeu classique revisité !"
+            technologies={['React', 'TypeScript', 'Vite', 'CSS3', 'Logique de Jeu']}
             link="https://will17lr.github.io/memory/"
             github="https://github.com/will17lr/memory"
             image={`${import.meta.env.BASE_URL}images/memory-project.png`}
