@@ -12,8 +12,8 @@ export default function SkillCard({
   skills,
 }: SkillCardProps) {
   return (
-    <div className="p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg hover:border-blue-200 transition-all duration-300">
-      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 text-blue-700">
+    <div data-reveal className="group p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg hover:border-blue-200 transition-all duration-300 hover:-translate-y-1">
+      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 text-blue-700 transition-transform duration-300 group-hover:scale-105">
         {icon}
       </div>
       <h3 className="text-heading-md text-gray-900 mb-2">{title}</h3>
