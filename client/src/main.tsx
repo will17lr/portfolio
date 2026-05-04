@@ -7,7 +7,10 @@ const umamiEndpoint = (
   import.meta.env.VITE_ANALYTICS_ENDPOINT ||
   "https://cloud.umami.is"
 ).replace(/\/$/, "");
-const umamiWebsiteId = import.meta.env.VITE_UMAMI_WEBSITE_ID || import.meta.env.VITE_ANALYTICS_WEBSITE_ID;
+const umamiWebsiteId =
+  import.meta.env.VITE_UMAMI_WEBSITE_ID ||
+  import.meta.env.VITE_ANALYTICS_WEBSITE_ID ||
+  "cb97b827-4f7b-4530-bbd5-b7ad58babe13";
 
 if (import.meta.env.PROD && umamiWebsiteId && typeof document !== "undefined") {
   const script = document.createElement("script");
