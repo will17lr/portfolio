@@ -76,6 +76,14 @@ export default function Header() {
               isPreviewOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none'
             }`}
           >
+            <button
+              type="button"
+              onClick={() => setIsPreviewOpen(false)}
+              aria-label="Fermer la carte de visite"
+              className="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-gray-950/80 text-white shadow-sm transition-colors hover:bg-gray-950 focus-visible:ring-2 focus-visible:ring-white"
+            >
+              <X size={16} aria-hidden="true" />
+            </button>
             <img
               src={previewImage}
               alt="Aperçu du portfolio de Wilfried Vogler"
