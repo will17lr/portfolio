@@ -205,16 +205,16 @@ export default function Home() {
         </div>
 
         <div className="space-y-20">
-          {/* Project 1: Annabelle */}
+          {/* Project 1: Kine Site */}
           <ProjectCard
-            title="Annabelle"
-            category="Site vitrine"
-            description="Un site web responsive développé en HTML, CSS et JavaScript. Ce projet m'a permis de travailler la structuration de pages, l'intégration d'interfaces et des interactions légères côté client."
-            highlights={['Pages statiques structurées', 'Interface responsive', 'Chargement de composants réutilisables']}
-            technologies={['HTML5', 'CSS3', 'JavaScript', 'Responsive Design']}
-            link="https://will17lr.github.io/annabelle-site-v2/"
-            github="https://github.com/will17lr/annabelle-site-v2"
-            image={`${import.meta.env.BASE_URL}images/annabelle-project.png`}
+            title="Kine Site"
+            category="Site vitrine fictif"
+            description="Un site vitrine fictif pour un cabinet de kinésithérapie à Lagord. Ce projet m'a permis de reprendre une structure professionnelle complète : pages de présentation, informations pratiques, tarifs, contact, responsive design et optimisation SEO."
+            highlights={['Projet de mise en situation', 'Pages HTML structurées', 'SEO et responsive design']}
+            technologies={['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'SEO']}
+            link="https://will17lr.github.io/kine-site/"
+            github="https://github.com/will17lr/kine-site"
+            image={`${import.meta.env.BASE_URL}images/kine-project.png`}
           />
 
           {/* Project 2: La Hora */}
