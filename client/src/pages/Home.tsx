@@ -177,19 +177,19 @@ export default function Home() {
               icon={<Code2 size={24} />}
               title="Frontend"
               description="Développement d'interfaces modernes et responsives"
-              skills={['HTML5/CSS3', 'JavaScript', 'React', 'Bootstrap', 'Mobile-first']}
+              skills={['Applications web', 'HTML5/CSS3', 'JavaScript', 'React', 'TypeScript', 'Responsive Design']}
             />
             <SkillCard
               icon={<Database size={24} />}
               title="Backend & Bases de Données"
               description="Développement serveur et gestion de données"
-              skills={['Node.js', 'Express', 'MongoDB', 'MySQL', 'API REST', 'MVC']}
+              skills={['Node.js', 'Express', 'API REST', 'MongoDB', 'MySQL', 'CRUD']}
             />
             <SkillCard
               icon={<Zap size={24} />}
               title="Outils & Pratiques"
               description="Méthodologies modernes et outils de développement"
-              skills={['Git/GitHub', 'Figma intégration', 'VS Code', 'Agile/Jira', 'UX/UI', 'Analyse']}
+              skills={['Git/GitHub', 'VS Code', 'Figma', 'Agile/Jira', 'UX/UI', 'Déploiement web']}
             />
           </div>
         </div>
