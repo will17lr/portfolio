@@ -168,7 +168,7 @@ export default function Home() {
           <div className="mb-16" data-reveal>
             <h2 className="text-heading-lg text-gray-900 mb-4">Compétences</h2>
             <p className="text-body text-gray-600 max-w-2xl">
-              Une expertise solide en développement frontend et backend, avec une compréhension approfondie des bases de données et des architectures web modernes.
+              Compétences en développement frontend et backend, avec une pratique des interfaces responsives, des API REST et de la gestion de données.
             </p>
           </div>
 
@@ -220,11 +220,11 @@ export default function Home() {
           {/* Project 2: La Hora */}
           <ProjectCard
             title="La Hora"
-            category="Fullstack"
-            description="Un projet fullstack complet combinant frontend et backend. Site complet avec interface admin, gestion des réservations (CRUD), API REST et envoi d'emails via Nodemailer. Ce projet démontre ma capacité à créer une application web complète et fonctionnelle."
-            highlights={['Interface admin', 'CRUD avec MongoDB', 'Envoi d’emails via Nodemailer']}
-            technologies={['Node.js', 'Express', 'EJS', 'MongoDB', 'Tailwind CSS', 'Nodemailer']}
-            link="https://will17lr.github.io/La_Hora/"
+            category="Application fullstack"
+            description="Application web complète pour un bar à La Rochelle : site vitrine, carte interactive matin/soir, réservation client, formulaire de contact et interface d'administration sécurisée."
+            highlights={['Carte dynamique matin/soir', 'Réservations et messages clients', 'Dashboard admin avec CRUD produits']}
+            technologies={['Node.js', 'Express', 'EJS', 'MongoDB', 'Tailwind CSS', 'Nodemailer', 'Netlify Functions']}
+            link="https://la-hora.netlify.app/"
             github="https://github.com/will17lr/La_Hora"
             image={`${import.meta.env.BASE_URL}images/la-hora-project.png`}
             reverse
@@ -234,9 +234,9 @@ export default function Home() {
           <ProjectCard
             title="Renter Car"
             category="Frontend"
-            description="Une interface de location de voitures développée en HTML, CSS et JavaScript. Elle consomme une API pour afficher les véhicules, propose un tri dynamique et une présentation claire des offres."
-            highlights={['Consommation de données avec fetch', 'Tri dynamique des véhicules', 'Cartes générées côté client']}
-            technologies={['HTML5', 'CSS3', 'JavaScript', 'Fetch API', 'Tri dynamique']}
+            description="Intégration responsive d’une interface de location de véhicules à partir d’une maquette. Le projet affiche dynamiquement les véhicules depuis des données JSON, avec tri, pages dédiées et adaptation mobile/tablette."
+            highlights={['Affichage depuis données JSON', 'Tri dynamique des véhicules', 'Cartes générées côté client']}
+            technologies={['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'Fetch API', 'JSON']}
             link="https://will17lr.github.io/Renter-car/"
             github="https://github.com/will17lr/Renter-car"
             image={`${import.meta.env.BASE_URL}images/renter-car-project.png`}
