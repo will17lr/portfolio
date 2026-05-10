@@ -80,7 +80,7 @@ export default function ProjectCard({
             </div>
 
             {/* Image */}
-            <div className="relative aspect-16/10 overflow-hidden bg-black">
+            <div className="relative aspect-16/09 overflow-hidden bg-neutral-950 flex items-center justify-center">
               <img
                 src={image}
                 alt={title}
