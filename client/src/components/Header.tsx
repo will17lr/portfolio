@@ -50,19 +50,39 @@ export default function Header() {
       <nav className="container flex items-center justify-between h-16">
         <div ref={logoRef} className="group/logo relative flex items-center gap-2">
           <button
-            type="button"
-            onClick={() => setIsPreviewOpen((current) => !current)}
-            aria-expanded={isPreviewOpen}
-            aria-label="Afficher la carte de visite"
-            className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg bg-gray-950 shadow-sm transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2"
-          >
-            <img
-              src={logoImage}
-              alt=""
-              aria-hidden="true"
-              className="h-full w-full object-cover"
-            />
-          </button>
+  type="button"
+  onClick={() => setIsPreviewOpen((current) => !current)}
+  aria-expanded={isPreviewOpen}
+  aria-label="Afficher la carte de visite"
+  className="
+    logo-spin-hint
+    relative
+    flex
+    h-10
+    w-10
+    items-center
+    justify-center
+    overflow-hidden
+    rounded-lg
+    bg-gray-950
+    shadow-sm
+    transition-all
+    duration-300
+    hover:scale-110
+    hover:shadow-2xl
+    focus-visible:ring-2
+    focus-visible:ring-blue-700
+    focus-visible:ring-offset-2
+  "
+>
+  <img
+    src={logoImage}
+    alt=""
+    aria-hidden="true"
+    className="h-full w-full object-cover"
+  />
+</button>
+
           <button
             type="button"
             onClick={scrollToTop}
