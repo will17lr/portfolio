@@ -87,7 +87,7 @@ export default function ProjectCard({
                 className="
                   h-full
                   w-full
-                  object-cover
+                  object-contain
                   object-top
                   transition-transform
                   duration-700
