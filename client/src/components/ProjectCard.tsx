@@ -30,7 +30,7 @@ export default function ProjectCard({
         reverse ? "md:grid-flow-dense" : ""
       }`}
     >
-      {/* IMAGE */}
+      {/* IMAGE CARD */}
       {image && (
         <div className={`${reverse ? "md:col-start-2" : ""}`}>
           <div
@@ -51,30 +51,28 @@ export default function ProjectCard({
             {/* Topbar */}
             <div
               className="
-    flex
-    h-11
-    items-center
-    justify-between
-    border-b
-    border-white/10
-    bg-[#1f2937]
-    px-4
-  "
+                flex
+                h-11
+                items-center
+                justify-between
+                border-b
+                border-white/10
+                bg-[#1f2937]
+                px-4
+              "
             >
-              <div className="flex items-center gap-2 text-sm font-medium text-gray-200">
-                <Terminal size={15} />
-                <span>{title}</span>
+              <div className="flex min-w-0 items-center gap-2 text-sm font-medium text-gray-200">
+                <Terminal size={15} className="flex-none" />
+                <span className="truncate">{title}</span>
               </div>
 
-              <div className="flex h-full">
+              <div className="flex h-full flex-none">
                 <span className="flex h-full w-10 items-center justify-center text-gray-400 transition-colors hover:bg-white/10">
                   -
                 </span>
-
                 <span className="flex h-full w-10 items-center justify-center text-gray-400 transition-colors hover:bg-white/10">
                   □
                 </span>
-
                 <span className="flex h-full w-10 items-center justify-center bg-red-500/90 text-white transition-colors hover:bg-red-500">
                   ×
                 </span>
@@ -87,34 +85,34 @@ export default function ProjectCard({
                 src={image}
                 alt={title}
                 className="
-      h-full
-      w-full
-      object-cover
-      object-top
-      transition-transform
-      duration-700
-      group-hover:scale-[1.03]
-    "
+                  h-full
+                  w-full
+                  object-cover
+                  object-top
+                  transition-transform
+                  duration-700
+                  group-hover:scale-[1.03]
+                "
               />
 
               {/* Overlay desktop uniquement */}
               <div
                 className="
-    pointer-events-none
-    absolute
-    inset-0
-    hidden
-    items-center
-    justify-center
-    gap-4
-    bg-black/45
-    opacity-0
-    backdrop-blur-[2px]
-    transition-all
-    duration-500
-    md:flex
-    md:group-hover:opacity-100
-  "
+                  pointer-events-none
+                  absolute
+                  inset-0
+                  hidden
+                  items-center
+                  justify-center
+                  gap-4
+                  bg-black/45
+                  opacity-0
+                  backdrop-blur-[2px]
+                  transition-all
+                  duration-500
+                  lg:flex
+                  lg:group-hover:opacity-100
+                "
               >
                 {link && (
                   <a
@@ -122,22 +120,22 @@ export default function ProjectCard({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
-        pointer-events-auto
-        inline-flex
-        items-center
-        gap-2
-        rounded-xl
-        bg-white
-        px-5
-        py-3
-        text-sm
-        font-semibold
-        text-gray-900
-        shadow-xl
-        transition-all
-        duration-300
-        hover:scale-105
-      "
+                      pointer-events-auto
+                      inline-flex
+                      items-center
+                      gap-2
+                      rounded-xl
+                      bg-white
+                      px-5
+                      py-3
+                      text-sm
+                      font-semibold
+                      text-gray-900
+                      shadow-xl
+                      transition-all
+                      duration-300
+                      hover:scale-105
+                    "
                   >
                     <ExternalLink size={16} />
                     Voir
@@ -150,86 +148,98 @@ export default function ProjectCard({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
-        pointer-events-auto
-        inline-flex
-        items-center
-        gap-2
-        rounded-xl
-        border
-        border-white/20
-        bg-white/10
-        px-5
-        py-3
-        text-sm
-        font-semibold
-        text-white
-        backdrop-blur
-        transition-all
-        duration-300
-        hover:scale-105
-        hover:bg-white/20
-      "
+                      pointer-events-auto
+                      inline-flex
+                      items-center
+                      gap-2
+                      rounded-xl
+                      border
+                      border-white/20
+                      bg-white/10
+                      px-5
+                      py-3
+                      text-sm
+                      font-semibold
+                      text-white
+                      backdrop-blur
+                      transition-all
+                      duration-300
+                      hover:scale-105
+                      hover:bg-white/20
+                    "
                   >
                     <Github size={16} />
                     GitHub
                   </a>
                 )}
               </div>
-              {/* CTA mobile / tablette */}
-              <div className="grid grid-cols-2 gap-3 border-t border-white/10 bg-gray-950 p-3 md:hidden">
-                {link && (
-                  <a
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-        inline-flex
-        min-h-11
-        items-center
-        justify-center
-        gap-2
-        rounded-xl
-        bg-white
-        px-4
-        py-2
-        text-sm
-        font-semibold
-        text-gray-900
-        shadow
-      "
-                  >
-                    <ExternalLink size={16} />
-                    Voir
-                  </a>
-                )}
+            </div>
 
-                {github && (
-                  <a
-                    href={github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-        inline-flex
-        min-h-11
-        items-center
-        justify-center
-        gap-2
-        rounded-xl
-        border
-        border-white/20
-        bg-white/10
-        px-4
-        py-2
-        text-sm
-        font-semibold
-        text-white
-      "
-                  >
-                    <Github size={16} />
-                    GitHub
-                  </a>
-                )}
-              </div>
+            {/* CTA mobile + tablette */}
+            <div
+              className={`
+                grid
+                gap-3
+                border-t
+                border-white/10
+                bg-gray-950
+                p-3
+                lg:hidden
+                ${link && github ? "grid-cols-2" : "grid-cols-1"}
+              `}
+            >
+              {link && (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-flex
+                    min-h-11
+                    items-center
+                    justify-center
+                    gap-2
+                    rounded-xl
+                    bg-white
+                    px-4
+                    py-2
+                    text-sm
+                    font-semibold
+                    text-gray-900
+                    shadow
+                  "
+                >
+                  <ExternalLink size={16} />
+                  Voir
+                </a>
+              )}
+
+              {github && (
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-flex
+                    min-h-11
+                    items-center
+                    justify-center
+                    gap-2
+                    rounded-xl
+                    border
+                    border-white/20
+                    bg-white/10
+                    px-4
+                    py-2
+                    text-sm
+                    font-semibold
+                    text-white
+                  "
+                >
+                  <Github size={16} />
+                  GitHub
+                </a>
+              )}
             </div>
           </div>
         </div>
