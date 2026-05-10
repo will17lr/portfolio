@@ -107,10 +107,11 @@ export default function ProjectCard({
                   justify-center
                   gap-4
                   bg-black/45
-                  opacity-0
+                  opacity-100
                   backdrop-blur-[2px]
                   transition-all
                   duration-500
+                  md:opacity-0
                   group-hover:opacity-100
                 "
               >
