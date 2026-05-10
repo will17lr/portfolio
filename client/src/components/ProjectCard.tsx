@@ -97,23 +97,24 @@ export default function ProjectCard({
     "
               />
 
-              {/* Overlay */}
+              {/* Overlay desktop uniquement */}
               <div
                 className="
-                  absolute
-                  inset-0
-                  flex
-                  items-center
-                  justify-center
-                  gap-4
-                  bg-black/45
-                  opacity-100
-                  backdrop-blur-[2px]
-                  transition-all
-                  duration-500
-                  md:opacity-0
-                  group-hover:opacity-100
-                "
+    pointer-events-none
+    absolute
+    inset-0
+    hidden
+    items-center
+    justify-center
+    gap-4
+    bg-black/45
+    opacity-0
+    backdrop-blur-[2px]
+    transition-all
+    duration-500
+    md:flex
+    md:group-hover:opacity-100
+  "
               >
                 {link && (
                   <a
@@ -121,21 +122,22 @@ export default function ProjectCard({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
-                      inline-flex
-                      items-center
-                      gap-2
-                      rounded-xl
-                      bg-white
-                      px-5
-                      py-3
-                      text-sm
-                      font-semibold
-                      text-gray-900
-                      shadow-xl
-                      transition-all
-                      duration-300
-                      hover:scale-105
-                    "
+        pointer-events-auto
+        inline-flex
+        items-center
+        gap-2
+        rounded-xl
+        bg-white
+        px-5
+        py-3
+        text-sm
+        font-semibold
+        text-gray-900
+        shadow-xl
+        transition-all
+        duration-300
+        hover:scale-105
+      "
                   >
                     <ExternalLink size={16} />
                     Voir
@@ -148,24 +150,80 @@ export default function ProjectCard({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
-                      inline-flex
-                      items-center
-                      gap-2
-                      rounded-xl
-                      border
-                      border-white/20
-                      bg-white/10
-                      px-5
-                      py-3
-                      text-sm
-                      font-semibold
-                      text-white
-                      backdrop-blur
-                      transition-all
-                      duration-300
-                      hover:scale-105
-                      hover:bg-white/20
-                    "
+        pointer-events-auto
+        inline-flex
+        items-center
+        gap-2
+        rounded-xl
+        border
+        border-white/20
+        bg-white/10
+        px-5
+        py-3
+        text-sm
+        font-semibold
+        text-white
+        backdrop-blur
+        transition-all
+        duration-300
+        hover:scale-105
+        hover:bg-white/20
+      "
+                  >
+                    <Github size={16} />
+                    GitHub
+                  </a>
+                )}
+              </div>
+              {/* CTA mobile / tablette */}
+              <div className="grid grid-cols-2 gap-3 border-t border-white/10 bg-gray-950 p-3 md:hidden">
+                {link && (
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+        inline-flex
+        min-h-11
+        items-center
+        justify-center
+        gap-2
+        rounded-xl
+        bg-white
+        px-4
+        py-2
+        text-sm
+        font-semibold
+        text-gray-900
+        shadow
+      "
+                  >
+                    <ExternalLink size={16} />
+                    Voir
+                  </a>
+                )}
+
+                {github && (
+                  <a
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+        inline-flex
+        min-h-11
+        items-center
+        justify-center
+        gap-2
+        rounded-xl
+        border
+        border-white/20
+        bg-white/10
+        px-4
+        py-2
+        text-sm
+        font-semibold
+        text-white
+      "
                   >
                     <Github size={16} />
                     GitHub
