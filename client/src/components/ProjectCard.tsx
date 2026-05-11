@@ -174,73 +174,84 @@ export default function ProjectCard({
                 )}
               </div>
             </div>
+          </div>
 
-            {/* CTA mobile + tablette */}
-            <div
-              className={`
+          {/* CTA mobile + tablette */}
+          <div
+            className={`
+                mt-2
+                mx-auto
                 grid
+                max-w-[95%]
                 gap-3
-                border-t
-                border-white/10
-                bg-gray-950
-                p-3
                 lg:hidden
                 ${link && github ? "grid-cols-2" : "grid-cols-1"}
               `}
-            >
-              {link && (
-                <a
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    inline-flex
-                    min-h-11
-                    items-center
-                    justify-center
-                    gap-2
-                    rounded-xl
-                    bg-white
-                    px-4
-                    py-2
-                    text-sm
-                    font-semibold
-                    text-gray-900
-                    shadow
-                  "
-                >
-                  <ExternalLink size={16} />
-                  Voir
-                </a>
-              )}
+          >
+            {link && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  inline-flex
+                  w-full
+                  min-h-10  
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-xl
+                  bg-gray-100
+                  hover:bg-gray-50
+                  hover:-translate-y-0.5
+                  px-4
+                  py-2
+                  text-sm
+                  font-semibold
+                  text-gray-900
+                  shadow-md
+                  transition-all
+                  duration-50
+                  active:scale-[0.98]
+                "
+              >
+                <ExternalLink size={16} />
+                Voir
+              </a>
+            )}
 
-              {github && (
-                <a
-                  href={github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    inline-flex
-                    min-h-11
-                    items-center
-                    justify-center
-                    gap-2
-                    rounded-xl
-                    border
-                    border-white/20
-                    bg-white/10
-                    px-4
-                    py-2
-                    text-sm
-                    font-semibold
-                    text-white
-                  "
-                >
-                  <Github size={16} />
-                  GitHub
-                </a>
-              )}
-            </div>
+            {github && (
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  inline-flex
+                  w-full
+                  min-h-10
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-xl
+                  border
+                  border-white/10
+                  bg-slate-900
+                  hover:bg-slate-800
+                  hover:-translate-y-0.5
+                  py-2
+                  text-sm
+                  font-semibold
+                  text-white
+                  transition-all
+                  duration-300
+                  active:scale-[0.98]
+                  shadow-sm
+                "
+              >
+                <Github size={16} />
+                GitHub
+              </a>
+            )}
           </div>
         </div>
       )}

@@ -410,8 +410,8 @@ export default function Home() {
                   </h3>
                   <p className="text-body text-blue-700 font-medium">Citopia</p>
                 </div>
-                <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-small font-medium">
-                  Sept. 2025 - Oct. 2025
+                <span className="inline-flex w-fit shrink-0 items-center justify-center rounded-full bg-blue-100 px-4 py-2 text-small font-medium leading-tight text-blue-700 whitespace-nowrap">
+                  Sept. 2025&nbsp;–&nbsp;Nov. 2025
                 </span>
               </div>
               <ul className="space-y-2 text-body text-gray-600">
@@ -432,8 +432,8 @@ export default function Home() {
                   </h3>
                   <p className="text-body text-blue-700 font-medium">Tibco</p>
                 </div>
-                <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-small font-medium">
-                  Sept. 2002 - Oct. 2003
+                <span className="inline-flex w-fit shrink-0 items-center justify-center rounded-full bg-blue-100 px-4 py-2 text-small font-medium leading-tight text-blue-700 whitespace-nowrap">
+                  Sept. 2002&nbsp;–&nbsp;Oct. 2003
                 </span>
               </div>
               <ul className="space-y-2 text-body text-gray-600">
@@ -466,8 +466,8 @@ export default function Home() {
                   Afec La Rochelle
                 </p>
               </div>
-              <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-small font-medium">
-                Mars 2025 - Déc. 2025
+              <span className="inline-flex w-fit shrink-0 items-center justify-center rounded-full bg-blue-100 px-4 py-2 text-small font-medium leading-tight text-blue-700 whitespace-nowrap">
+                Mars 2025&nbsp;–&nbsp;Déc. 2025
               </span>
             </div>
             <p className="text-body text-gray-600 mb-3">
@@ -491,8 +491,8 @@ export default function Home() {
                   Afpa Marseille
                 </p>
               </div>
-              <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-small font-medium">
-                2002 - 2003
+              <span className="inline-flex w-fit shrink-0 items-center justify-center rounded-full bg-blue-100 px-4 py-2 text-small font-medium leading-tight text-blue-700 whitespace-nowrap">
+                2002&nbsp;–&nbsp;2003
               </span>
             </div>
             <ul className="space-y-2 text-small text-gray-600">
