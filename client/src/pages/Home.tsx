@@ -21,6 +21,38 @@ const currentYear = new Date().getFullYear();
 const linkedInUrl = "https://www.linkedin.com/in/vogler-wilfried23/";
 const cvRequestLink =
   "mailto:w.vogler@outlook.fr?subject=Demande%20de%20CV&body=Bonjour%20Wilfried,%0D%0A%0D%0AJe%20souhaite%20recevoir%20votre%20CV.%0D%0A%0D%0AVoici%20mes%20coordonnees%20:%0D%0A-%20Nom%20:%20%0D%0A-%20Entreprise%20:%20%0D%0A-%20Email%20:%20%0D%0A-%20Telephone%20:%20%0D%0A%0D%0AMerci.";
+const DateBadge = ({ start, end }: { start: string; end: string }) => {
+  return (
+    <span
+      className="
+        inline-flex
+        w-fit
+        max-w-full
+        shrink-0
+        flex-col
+        items-center
+        justify-center
+        rounded-full
+        bg-blue-100
+        px-3
+        py-1.5
+        text-center
+        text-sm
+        font-medium
+        leading-tight
+        text-blue-700
+        lg:flex-row
+        lg:px-4
+        lg:py-2 
+        lg:whitespace-nowrap
+      "
+    >
+      <span className="whitespace-nowrap">{start}</span>
+      <span className="hidden lg:inline">&nbsp;–&nbsp;</span>
+      <span className="whitespace-nowrap">{end}</span>
+    </span>
+  );
+};
 
 export default function Home() {
   useEffect(() => {
@@ -395,25 +427,30 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section id="parcours" className="scroll-mt-16 py-20 bg-gray-50">
-        <div className="container" data-reveal>
-          <h2 className="text-heading-lg text-gray-900 mb-12">Expérience</h2>
+      <section
+        id="parcours"
+        className="scroll-mt-16 overflow-x-hidden bg-gray-50 py-20"
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8" data-reveal>
+          <h2 className="mb-12 text-heading-lg text-gray-900">Expérience</h2>
 
-          <div className="relative space-y-8 border-l-2 border-blue-100 pl-6">
+          <div className="relative space-y-8 border-l-2 border-blue-100 pl-5 sm:pl-6">
             {/* Current Experience */}
-            <div className="relative p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
-              <span className="absolute -left-8.25 top-7 h-3.5 w-3.5 rounded-full border-4 border-white bg-orange-500 shadow"></span>
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h3 className="text-heading-md text-gray-900">
+            <div className="relative rounded-lg border border-gray-200 bg-white p-5 transition-shadow hover:shadow-lg sm:p-6">
+              <span className="absolute -left-[2.0625rem] top-7 h-3.5 w-3.5 rounded-full border-4 border-white bg-orange-500 shadow"></span>
+
+              <div className="mb-4 flex min-w-0 items-start justify-between gap-3">
+                <div className="min-w-0 flex-1">
+                  <h3 className="break-words text-heading-md text-gray-900">
                     Développeur Web
                   </h3>
-                  <p className="text-body text-blue-700 font-medium">Citopia</p>
+
+                  <p className="text-body font-medium text-blue-700">Citopia</p>
                 </div>
-                <span className="inline-flex w-fit shrink-0 items-center justify-center rounded-full bg-blue-100 px-4 py-2 text-small font-medium leading-tight text-blue-700 whitespace-nowrap">
-                  Sept. 2025&nbsp;–&nbsp;Nov. 2025
-                </span>
+
+                <DateBadge start="Sept. 2025" end="Nov. 2025" />
               </div>
+
               <ul className="space-y-2 text-body text-gray-600">
                 <li>• Intégration d'interfaces depuis Figma</li>
                 <li>• Amélioration UX/UI</li>
@@ -423,19 +460,21 @@ export default function Home() {
             </div>
 
             {/* Past Experience */}
-            <div className="relative p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
-              <span className="absolute -left-8.25 top-7 h-3.5 w-3.5 rounded-full border-4 border-white bg-blue-700 shadow"></span>
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h3 className="text-heading-md text-gray-900">
+            <div className="relative rounded-lg border border-gray-200 bg-white p-5 transition-shadow hover:shadow-lg sm:p-6">
+              <span className="absolute -left-[2.0625rem] top-7 h-3.5 w-3.5 rounded-full border-4 border-white bg-blue-700 shadow"></span>
+
+              <div className="mb-4 flex min-w-0 items-start justify-between gap-3">
+                <div className="min-w-0 flex-1">
+                  <h3 className="break-words text-heading-md text-gray-900">
                     Technicien de Base de Données
                   </h3>
-                  <p className="text-body text-blue-700 font-medium">Tibco</p>
+
+                  <p className="text-body font-medium text-blue-700">Tibco</p>
                 </div>
-                <span className="inline-flex w-fit shrink-0 items-center justify-center rounded-full bg-blue-100 px-4 py-2 text-small font-medium leading-tight text-blue-700 whitespace-nowrap">
-                  Sept. 2002&nbsp;–&nbsp;Oct. 2003
-                </span>
+
+                <DateBadge start="Fév. 2003" end="Mai 2003" />
               </div>
+
               <ul className="space-y-2 text-body text-gray-600">
                 <li>• Application SQL Server 2000</li>
                 <li>• Analyses DATA</li>
@@ -448,58 +487,67 @@ export default function Home() {
       </section>
 
       {/* Formation Section */}
-      <section className="py-20 container">
-        <h2 className="text-heading-lg text-gray-900 mb-12" data-reveal>
-          Formation
-        </h2>
+      <section className="overflow-x-hidden py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="mb-12 text-heading-lg text-gray-900" data-reveal>
+            Formation
+          </h2>
 
-        <div className="relative space-y-8 border-l-2 border-blue-100 pl-6">
-          {/* Current Formation */}
-          <div className="relative p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
-            <span className="absolute -left-8.25 top-7 h-3.5 w-3.5 rounded-full border-4 border-white bg-orange-500 shadow"></span>
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <h3 className="text-heading-md text-gray-900">
-                  Formation DWWM
-                </h3>
-                <p className="text-body text-blue-700 font-medium">
-                  Afec La Rochelle
-                </p>
-              </div>
-              <span className="inline-flex w-fit shrink-0 items-center justify-center rounded-full bg-blue-100 px-4 py-2 text-small font-medium leading-tight text-blue-700 whitespace-nowrap">
-                Mars 2025&nbsp;–&nbsp;Déc. 2025
-              </span>
-            </div>
-            <p className="text-body text-gray-600 mb-3">
-              Développeur Web et Web Mobile
-            </p>
-            <ul className="space-y-2 text-small text-gray-600">
-              <li>• HTML5 / CSS3 / JavaScript</li>
-              <li>• Responsive design (mobile-first)</li>
-              <li>• Bootstrap, Git & GitHub</li>
-              <li>• Notions : API REST, Node.js, MySQL</li>
-            </ul>
-          </div>
+          <div className="relative space-y-8 border-l-2 border-blue-100 pl-5 sm:pl-6">
+            {/* Current Formation */}
+            <div className="relative rounded-lg border border-gray-200 bg-white p-5 transition-shadow hover:shadow-lg sm:p-6">
+              <span className="absolute -left-[2.0625rem] top-7 h-3.5 w-3.5 rounded-full border-4 border-white bg-orange-500 shadow"></span>
 
-          {/* Past Formation */}
-          <div className="relative p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
-            <span className="absolute -left-8.25 top-7 h-3.5 w-3.5 rounded-full border-4 border-white bg-blue-700 shadow"></span>
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <h3 className="text-heading-md text-gray-900">TSIG</h3>
-                <p className="text-body text-blue-700 font-medium">
-                  Afpa Marseille
-                </p>
+              <div className="mb-4 flex min-w-0 items-start justify-between gap-3">
+                <div className="min-w-0 flex-1">
+                  <h3 className="break-words text-heading-md text-gray-900">
+                    Formation DWWM
+                  </h3>
+
+                  <p className="text-body font-medium text-blue-700">
+                    Afec La Rochelle
+                  </p>
+                </div>
+
+                <DateBadge start="Mars 2025" end="Déc. 2025" />
               </div>
-              <span className="inline-flex w-fit shrink-0 items-center justify-center rounded-full bg-blue-100 px-4 py-2 text-small font-medium leading-tight text-blue-700 whitespace-nowrap">
-                2002&nbsp;–&nbsp;2003
-              </span>
+
+              <p className="mb-3 text-body text-gray-600">
+                Développeur Web et Web Mobile
+              </p>
+
+              <ul className="space-y-2 text-small text-gray-600">
+                <li>• HTML5 / CSS3 / JavaScript</li>
+                <li>• Responsive design mobile-first</li>
+                <li>• Bootstrap, Git & GitHub</li>
+                <li>• Notions : API REST, Node.js, MySQL</li>
+              </ul>
             </div>
-            <ul className="space-y-2 text-small text-gray-600">
-              <li>• Développement COBOL (IBM)</li>
-              <li>• PowerBuilder</li>
-              <li>• Analyse et traitement de données</li>
-            </ul>
+
+            {/* Past Formation */}
+            <div className="relative rounded-lg border border-gray-200 bg-white p-5 transition-shadow hover:shadow-lg sm:p-6">
+              <span className="absolute -left-[2.0625rem] top-7 h-3.5 w-3.5 rounded-full border-4 border-white bg-blue-700 shadow"></span>
+
+              <div className="mb-4 flex min-w-0 items-start justify-between gap-3">
+                <div className="min-w-0 flex-1">
+                  <h3 className="break-words text-heading-md text-gray-900">
+                    TSIG
+                  </h3>
+
+                  <p className="text-body font-medium text-blue-700">
+                    Afpa Marseille
+                  </p>
+                </div>
+
+                <DateBadge start="Juin 2002" end="Mai 2003" />
+              </div>
+
+              <ul className="space-y-2 text-small text-gray-600">
+                <li>• Développement COBOL IBM</li>
+                <li>• PowerBuilder</li>
+                <li>• Analyse et traitement de données</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
