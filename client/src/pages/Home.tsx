@@ -90,13 +90,13 @@ export default function Home() {
             <div className="animate-fade-in-up">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-small font-semibold text-orange-700">
                 <Sparkles size={16} />
-                Portfolio développeur web
+                Portfolio Développeur Web Full Stack junior
               </div>
               <h1 className="text-display text-gray-900 mb-6">
                 Wilfried <span className="text-blue-700">VOGLER</span>
               </h1>
               <p className="text-lg font-semibold text-blue-700 mb-4">
-                Développeur Web / Web Mobile Junior
+                Développeur Web Full Stack junior
               </p>
               <p className="text-body text-gray-600 mb-8 max-w-lg">
                 En reconversion vers le développement web, je conçois des
@@ -442,20 +442,23 @@ export default function Home() {
               <div className="mb-4 flex min-w-0 items-start justify-between gap-3">
                 <div className="min-w-0 flex-1">
                   <h3 className="break-words text-heading-md text-gray-900">
-                    Développeur Web
+                    Développeur Web Full Stack junior
                   </h3>
 
                   <p className="text-body font-medium text-blue-700">Citopia</p>
                 </div>
 
-                <DateBadge start="Sept. 2025" end="Nov. 2025" />
+                <DateBadge start="Sept. 2025" end="Déc. 2025" />
               </div>
 
               <ul className="space-y-2 text-body text-gray-600">
-                <li>• Intégration d'interfaces depuis Figma</li>
-                <li>• Amélioration UX/UI</li>
-                <li>• Correction de bugs</li>
-                <li>• Travail en méthodologie Agile (Jira)</li>
+                <li>• Front-end : React, TypeScript, CSS</li>
+                <li>• Back-end : Node.js, Express</li>
+                <li>• Conception et intégration d'interfaces web</li>
+                <li>
+                  • Travail en méthode Agile avec Jira au sein d'une équipe de 5
+                  personnes
+                </li>
               </ul>
             </div>
 
@@ -575,11 +578,11 @@ export default function Home() {
               w.vogler@outlook.fr
             </a>
             <a
-              href="tel:+33684959411"
+              href="tel:+33636423000"
               className="inline-flex min-h-12 items-center justify-center gap-2 whitespace-nowrap rounded-lg border-2 border-white px-5 py-3 font-medium text-white transition-colors hover:bg-white/10"
             >
               <Phone size={20} />
-              +33 6 84 95 94 11
+              06 36 42 30 00
             </a>
             <a
               href={cvRequestLink}
@@ -614,8 +617,8 @@ export default function Home() {
       <footer className="bg-gray-900 text-gray-400 py-8">
         <div className="container text-center text-small">
           <p>
-            © {currentYear} Wilfried VOGLER - Développeur Web Junior. Tous
-            droits réservés.
+            © {currentYear} Wilfried VOGLER - Développeur Web Full Stack junior.
+            Tous droits réservés.
           </p>
           <p className="mt-2">
             Créé avec React, Tailwind CSS et passion pour le code propre.
