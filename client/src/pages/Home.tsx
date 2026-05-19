@@ -98,7 +98,7 @@ export default function Home() {
               <p className="text-lg font-semibold text-blue-700 mb-4">
                 Développeur Web Full Stack junior
               </p>
-              <p className="text-body text-gray-600 mb-8 max-w-lg">
+              <p className="text-body text-gray-600 mb-8 max-w-lg leading-relaxed text-justify hyphens-auto">
                 En reconversion vers le développement web, je conçois des
                 interfaces fonctionnelles et responsives avec JavaScript, React,
                 Node.js et les bases de données. Mon parcours orienté logique,
@@ -269,7 +269,7 @@ export default function Home() {
         <div className="container">
           <div className="mb-16" data-reveal>
             <h2 className="text-heading-lg text-gray-900 mb-4">Compétences</h2>
-            <p className="text-body text-gray-600 max-w-2xl">
+            <p className="text-body text-gray-600 max-w-2xl leading-relaxed text-justify hyphens-auto">
               Compétences en développement frontend et backend, avec une
               pratique des interfaces responsives, des API REST et de la gestion
               de données.
@@ -324,7 +324,7 @@ export default function Home() {
       <section id="projects" className="py-20 container">
         <div className="mb-16" data-reveal>
           <h2 className="text-heading-lg text-gray-900 mb-4">Projets</h2>
-          <p className="text-body text-gray-600 max-w-2xl">
+          <p className="text-body text-gray-600 max-w-2xl leading-relaxed text-justify hyphens-auto">
             Voici mes réalisations les plus significatives, mettant en avant mes
             compétences en développement web et web mobile.
           </p>

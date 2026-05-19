@@ -285,7 +285,9 @@ export default function ProjectCard({
           {title}
         </h3>
 
-        <p className="mb-6 text-base leading-7 text-gray-600">{description}</p>
+        <p className="mb-6 text-base leading-7 text-gray-600 leading-relaxed text-justify hyphens-auto">
+          {description}
+        </p>
 
         {highlights.length > 0 && (
           <ul className="mb-8 grid gap-3 text-sm text-gray-700">
