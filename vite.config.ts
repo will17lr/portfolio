@@ -204,9 +204,10 @@ function vitePluginStorageProxy(): Plugin {
 }
 
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+const base = process.env.NETLIFY === "true" ? "/" : "/portfolio/";
 
 export default defineConfig({
-  base: "/portfolio/",
+  base,
   plugins,
   resolve: {
     alias: {
