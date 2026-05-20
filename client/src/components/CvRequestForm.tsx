@@ -24,7 +24,7 @@ export default function CvRequestForm() {
 
     try {
       const response = await fetch(
-        "https://TON-SITE-NETLIFY.netlify.app/.netlify/functions/request-cv",
+        "https://portfolio-wilfried-vogler.netlify.app/.netlify/functions/request-cv",
         {
           method: "POST",
           headers: {
