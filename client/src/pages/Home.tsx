@@ -16,11 +16,10 @@ import {
 import Header from "@/components/Header";
 import ProjectCard from "@/components/ProjectCard";
 import SkillCard from "@/components/SkillCard";
+import CvRequestForm from "@/components/CvRequestForm";
 
 const currentYear = new Date().getFullYear();
 const linkedInUrl = "https://www.linkedin.com/in/vogler-wilfried23/";
-const cvRequestLink =
-  "mailto:w.vogler@outlook.fr?subject=Demande%20de%20CV&body=Bonjour%20Wilfried,%0D%0A%0D%0AJe%20souhaite%20recevoir%20votre%20CV.%0D%0A%0D%0AVoici%20mes%20coordonnees%20:%0D%0A-%20Nom%20:%20%0D%0A-%20Entreprise%20:%20%0D%0A-%20Email%20:%20%0D%0A-%20Telephone%20:%20%0D%0A%0D%0AMerci.";
 const DateBadge = ({ start, end }: { start: string; end: string }) => {
   return (
     <span
@@ -113,7 +112,7 @@ export default function Home() {
                   Me contacter
                 </a>
                 <a
-                  href={cvRequestLink}
+                  href="#demande-cv"
                   className="group inline-flex min-h-12 items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-orange-200 px-6 py-3 font-medium text-orange-700 transition-all duration-200 hover:-translate-y-0.5 hover:border-orange-300 hover:bg-orange-50"
                 >
                   <FileText
@@ -555,6 +554,19 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="demande-cv" className="py-20 bg-gray-50">
+        <div className="container max-w-3xl">
+          <h2 className="text-heading-lg text-gray-900 mb-4">Demande de CV</h2>
+
+          <p className="text-body text-gray-600 mb-8">
+            Complétez ce formulaire professionnel. Après validation, un lien
+            temporaire vous sera envoyé par email.
+          </p>
+
+          <CvRequestForm />
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section
         id="contact"
@@ -585,7 +597,7 @@ export default function Home() {
               06 36 42 30 00
             </a>
             <a
-              href={cvRequestLink}
+              href="#demande-cv"
               className="inline-flex min-h-12 items-center justify-center gap-2 whitespace-nowrap rounded-lg border-2 border-orange-300 px-5 py-3 font-medium text-white transition-colors hover:bg-white/10"
             >
               <FileText size={20} />
