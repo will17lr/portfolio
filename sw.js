@@ -1,34 +1,30 @@
-const CACHE_NAME = "portfolio-wilfried-v2";
-
-const BASE_PATH = self.location.hostname.includes("github.io")
-  ? "/portfolio"
-  : "";
-
+const CACHE_NAME = "portfolio-wilfried-v1";
 const APP_SHELL = [
-  `${BASE_PATH}/`,
-  `${BASE_PATH}/index.html`,
-  `${BASE_PATH}/manifest.webmanifest`,
+  "/portfolio/",
+  "/portfolio/index.html",
+  "/portfolio/manifest.webmanifest",
+  "/portfolio/images/logo.png",
+  "/portfolio/images/pwa-192.png",
+  "/portfolio/images/pwa-512.png",
+  "/portfolio/images/pwa-maskable-512.png",
+  "/portfolio/images/apple-touch-icon.png"
 ];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL))
   );
-
   self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(
-        keys
-          .filter((key) => key !== CACHE_NAME)
-          .map((key) => caches.delete(key))
+    caches
+      .keys()
+      .then((keys) =>
+        Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))
       )
-    )
   );
-
   self.clients.claim();
 });
 
@@ -36,7 +32,6 @@ self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
   const requestUrl = new URL(event.request.url);
-
   if (requestUrl.origin !== self.location.origin) return;
 
   if (event.request.mode === "navigate") {
@@ -44,18 +39,11 @@ self.addEventListener("fetch", (event) => {
       fetch(event.request)
         .then((response) => {
           const responseClone = response.clone();
-
-          caches
-            .open(CACHE_NAME)
-            .then((cache) =>
-              cache.put(`${BASE_PATH}/index.html`, responseClone)
-            );
-
+          caches.open(CACHE_NAME).then((cache) => cache.put("/portfolio/index.html", responseClone));
           return response;
         })
-        .catch(() => caches.match(`${BASE_PATH}/index.html`))
+        .catch(() => caches.match("/portfolio/index.html"))
     );
-
     return;
   }
 
@@ -69,11 +57,7 @@ self.addEventListener("fetch", (event) => {
         }
 
         const responseClone = response.clone();
-
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, responseClone);
-        });
-
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
         return response;
       });
     })
