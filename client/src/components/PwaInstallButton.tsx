@@ -17,7 +17,12 @@ export default function PwaInstallButton() {
 
   const [isStandalone, setIsStandalone] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
-  const [showHelp, setShowHelp] = useState(false);
+
+  const dismissBanner = () => {
+    localStorage.setItem(STORAGE_KEY, Date.now().toString());
+    setInstallPrompt(null);
+    setIsDismissed(true);
+  };
 
   useEffect(() => {
     const standalone =
@@ -51,7 +56,6 @@ export default function PwaInstallButton() {
     const handleAppInstalled = () => {
       setInstallPrompt(null);
       setIsStandalone(true);
-      setShowHelp(false);
     };
 
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
@@ -68,28 +72,25 @@ export default function PwaInstallButton() {
 
   const handleInstallClick = async () => {
     if (!installPrompt) {
-      setShowHelp(current => !current);
+      dismissBanner();
       return;
     }
 
-    await installPrompt.prompt();
-
-    const choice = await installPrompt.userChoice;
-
-    if (choice.outcome === "accepted") {
-      setShowHelp(false);
+    try {
+      await installPrompt.prompt();
+      await installPrompt.userChoice;
+    } catch (error) {
+      console.error("Erreur pendant la tentative d'installation PWA :", error);
+    } finally {
+      dismissBanner();
     }
-
-    setInstallPrompt(null);
   };
 
   const handleDismiss = () => {
-    localStorage.setItem(STORAGE_KEY, Date.now().toString());
-    setIsDismissed(true);
-    setShowHelp(false);
+    dismissBanner();
   };
 
-  if (isStandalone || isDismissed) return null;
+  if (isStandalone || isDismissed || !installPrompt) return null;
 
   return (
     <div className="fixed bottom-5 left-1/2 z-50 w-[calc(100%-2rem)] max-w-sm -translate-x-1/2">
@@ -119,21 +120,6 @@ export default function PwaInstallButton() {
             Plus tard
           </button>
         </div>
-
-        {showHelp && (
-          <p className="mt-3 text-sm text-gray-600">
-            Si Chrome ne lance pas l’installation automatiquement, ouvre le menu
-            avec les trois points, puis choisis{" "}
-            <span className="font-medium text-gray-900">
-              Installer l’application
-            </span>{" "}
-            ou{" "}
-            <span className="font-medium text-gray-900">
-              Ajouter à l’écran d’accueil
-            </span>
-            .
-          </p>
-        )}
       </div>
     </div>
   );
