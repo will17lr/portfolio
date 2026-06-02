@@ -17,6 +17,7 @@ export default function PwaInstallButton() {
 
   const [isStandalone, setIsStandalone] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
 
   const dismissBanner = () => {
     localStorage.setItem(STORAGE_KEY, Date.now().toString());
@@ -30,9 +31,14 @@ export default function PwaInstallButton() {
       (window.navigator as Navigator & { standalone?: boolean }).standalone ===
         true;
 
-    setIsStandalone(standalone);
+    const mobileDevice =
+      window.matchMedia("(max-width: 768px)").matches ||
+      window.matchMedia("(pointer: coarse)").matches;
 
-    if (standalone) return;
+    setIsStandalone(standalone);
+    setIsMobileDevice(mobileDevice);
+
+    if (standalone || !mobileDevice) return;
 
     const dismissedAt = localStorage.getItem(STORAGE_KEY);
 
@@ -90,7 +96,9 @@ export default function PwaInstallButton() {
     dismissBanner();
   };
 
-  if (isStandalone || isDismissed || !installPrompt) return null;
+  if (isStandalone || isDismissed || !isMobileDevice || !installPrompt) {
+    return null;
+  }
 
   return (
     <div className="fixed bottom-5 left-1/2 z-50 w-[calc(100%-2rem)] max-w-sm -translate-x-1/2">
