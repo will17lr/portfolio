@@ -5,7 +5,6 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import PwaInstallButton from "./components/PwaInstallButton";
 import IntroAnimation from "./components/IntroAnimation";
 
 function Router() {
@@ -29,8 +28,6 @@ function App() {
           <IntroAnimation />
 
           <Router />
-
-          <PwaInstallButton />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
