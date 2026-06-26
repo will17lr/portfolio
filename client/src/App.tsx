@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import PwaInstallButton from "./components/PwaInstallButton";
+import IntroAnimation from "./components/IntroAnimation";
 
 function Router() {
   return (
@@ -24,6 +25,9 @@ function App() {
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
+
+          <IntroAnimation />
+
           <Router />
 
           <PwaInstallButton />

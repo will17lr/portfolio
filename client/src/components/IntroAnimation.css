@@ -1,0 +1,182 @@
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background:
+    radial-gradient(
+      circle at 70% 60%,
+      rgba(0, 102, 255, 0.35),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #020617 0%, #050b1a 50%, #000 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: introFadeOut 0.7s ease forwards;
+  animation-delay: 2.6s;
+}
+
+.intro-screen::before {
+  content: "";
+  position: absolute;
+  width: 160%;
+  height: 160%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 153, 255, 0.25),
+    transparent
+  );
+  transform: rotate(-18deg) translateX(-60%);
+  animation: introLightSweep 2.2s ease-in-out forwards;
+}
+
+.intro-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  animation: introContentScale 2.8s ease forwards;
+}
+
+.intro-code {
+  font-size: 2rem;
+  color: #009dff;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  opacity: 0;
+  animation: introAppear 0.5s ease forwards;
+}
+
+.intro-logo {
+  width: 150px;
+  max-width: 45vw;
+  margin-top: 0.7rem;
+  filter: drop-shadow(0 0 18px rgba(0, 132, 255, 0.8));
+  opacity: 0;
+  transform: translateY(20px) scale(0.92);
+  animation: introLogoReveal 0.8s ease forwards;
+  animation-delay: 0.35s;
+}
+
+.intro-line {
+  width: 0;
+  height: 3px;
+  margin: 1.4rem auto 1rem;
+  background: linear-gradient(90deg, #009dff, #4f46e5);
+  border-radius: 999px;
+  animation: introLineReveal 0.7s ease forwards;
+  animation-delay: 1s;
+}
+
+.intro-name {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: introTextReveal 0.7s ease forwards;
+  animation-delay: 1.35s;
+}
+
+.intro-role {
+  margin-top: 0.7rem;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: #dbeafe;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: introTextReveal 0.7s ease forwards;
+  animation-delay: 1.6s;
+}
+
+.intro-skip {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(2, 6, 23, 0.65);
+  color: white;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.intro-skip:hover {
+  border-color: #009dff;
+}
+
+@keyframes introAppear {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes introLogoReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes introLineReveal {
+  to {
+    width: 170px;
+  }
+}
+
+@keyframes introTextReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introLightSweep {
+  to {
+    transform: rotate(-18deg) translateX(60%);
+  }
+}
+
+@keyframes introContentScale {
+  0% {
+    transform: scale(0.96);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes introFadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-screen,
+  .intro-screen::before,
+  .intro-content,
+  .intro-code,
+  .intro-logo,
+  .intro-line,
+  .intro-name,
+  .intro-role {
+    animation: none;
+  }
+
+  .intro-screen {
+    display: none;
+  }
+}
