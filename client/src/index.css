@@ -280,6 +280,11 @@
       opacity: 1;
       transform: none;
     }
+
+    .section-title-line {
+      transform: scaleX(1);
+      transition: none;
+    }
   }
 
   @media (min-width: 640px) {

@@ -265,10 +265,11 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gray-50">
+      <section id="skills" className="py-24 lg:py-28 bg-gray-50">
         <div className="container">
           <div className="mb-16" data-reveal>
             <h2 className="text-heading-lg text-gray-900 mb-4">Compétences</h2>
+            <div className="section-title-line mt-4 mb-6 h-1 w-54 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500" />
             <p className="text-body text-gray-600 max-w-2xl leading-relaxed text-justify hyphens-auto">
               Compétences en développement frontend et backend, avec une
               pratique des interfaces responsives, des API REST et de la gestion
@@ -321,9 +322,10 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 container">
+      <section id="projects" className="py-24 lg:py-28 container">
         <div className="mb-16" data-reveal>
           <h2 className="text-heading-lg text-gray-900 mb-4">Projets</h2>
+          <div className="section-title-line mt-4 mb-6 h-1 w-28 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500" />
           <p className="text-body text-gray-600 max-w-2xl leading-relaxed text-justify hyphens-auto">
             Voici mes réalisations les plus significatives, mettant en avant mes
             compétences en développement web et web mobile.
@@ -426,130 +428,144 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience Section */}
+      {/* Section Parcours */}
       <section
         id="parcours"
-        className="scroll-mt-16 overflow-x-hidden bg-gray-50 py-20"
+        className="scroll-mt-16 overflow-x-hidden bg-gray-50 py-24 lg:py-28"
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8" data-reveal>
-          <h2 className="mb-12 text-heading-lg text-gray-900">Expérience</h2>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Titre principal */}
+          <div className="mb-16" data-reveal>
+            <h2 className="text-heading-lg text-gray-900">Parcours</h2>
 
-          <div className="relative space-y-8 border-l-2 border-blue-100 pl-5 sm:pl-6">
-            {/* Current Experience */}
-            <div className="relative rounded-lg border border-gray-200 bg-white p-5 transition-shadow hover:shadow-lg sm:p-6">
-              <span className="absolute -left-[2.0625rem] top-7 h-3.5 w-3.5 rounded-full border-4 border-white bg-orange-500 shadow"></span>
+            <div className="section-title-line mt-4 mb-6 h-1 w-35 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500" />
 
-              <div className="mb-4 flex min-w-0 items-start justify-between gap-3">
-                <div className="min-w-0 flex-1">
-                  <h3 className="break-words text-heading-md text-gray-900">
-                    Développeur Web Full Stack junior
-                  </h3>
+            <p className="max-w-2xl text-body text-gray-600">
+              Mon expérience professionnelle et mon parcours de formation
+              illustrent ma reconversion vers le développement web et
+              l'évolution de mes compétences.
+            </p>
+          </div>
 
-                  <p className="text-body font-medium text-blue-700">Citopia</p>
+          {/* Expérience */}
+          <div data-reveal>
+            <h2 className="mb-8 text-heading-md text-gray-900">Expérience</h2>
+
+            <div className="relative space-y-8 border-l-2 border-blue-100 pl-5 sm:pl-6">
+              {/* Current Experience */}
+              <div className="relative rounded-lg border border-gray-200 bg-white p-5 transition-shadow hover:shadow-lg sm:p-6">
+                <span className="absolute -left-[2.0625rem] top-7 h-3.5 w-3.5 rounded-full border-4 border-white bg-orange-500 shadow"></span>
+
+                <div className="mb-4 flex min-w-0 items-start justify-between gap-3">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="break-words text-heading-md text-gray-900">
+                      Développeur Web Full Stack junior
+                    </h3>
+
+                    <p className="text-body font-medium text-blue-700">
+                      Citopia
+                    </p>
+                  </div>
+
+                  <DateBadge start="Sept. 2025" end="Déc. 2025" />
                 </div>
 
-                <DateBadge start="Sept. 2025" end="Déc. 2025" />
+                <ul className="space-y-2 text-body text-gray-600">
+                  <li>• Front-end : React, TypeScript, CSS</li>
+                  <li>• Back-end : Node.js, Express</li>
+                  <li>• Conception et intégration d'interfaces web</li>
+                  <li>
+                    • Travail en méthode Agile avec Jira au sein d'une équipe de
+                    5 personnes
+                  </li>
+                </ul>
               </div>
 
-              <ul className="space-y-2 text-body text-gray-600">
-                <li>• Front-end : React, TypeScript, CSS</li>
-                <li>• Back-end : Node.js, Express</li>
-                <li>• Conception et intégration d'interfaces web</li>
-                <li>
-                  • Travail en méthode Agile avec Jira au sein d'une équipe de 5
-                  personnes
-                </li>
-              </ul>
-            </div>
+              {/* Past Experience */}
+              <div className="relative rounded-lg border border-gray-200 bg-white p-5 transition-shadow hover:shadow-lg sm:p-6">
+                <span className="absolute -left-[2.0625rem] top-7 h-3.5 w-3.5 rounded-full border-4 border-white bg-blue-700 shadow"></span>
 
-            {/* Past Experience */}
-            <div className="relative rounded-lg border border-gray-200 bg-white p-5 transition-shadow hover:shadow-lg sm:p-6">
-              <span className="absolute -left-[2.0625rem] top-7 h-3.5 w-3.5 rounded-full border-4 border-white bg-blue-700 shadow"></span>
+                <div className="mb-4 flex min-w-0 items-start justify-between gap-3">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="break-words text-heading-md text-gray-900">
+                      Technicien de Base de Données
+                    </h3>
 
-              <div className="mb-4 flex min-w-0 items-start justify-between gap-3">
-                <div className="min-w-0 flex-1">
-                  <h3 className="break-words text-heading-md text-gray-900">
-                    Technicien de Base de Données
-                  </h3>
+                    <p className="text-body font-medium text-blue-700">Tibco</p>
+                  </div>
 
-                  <p className="text-body font-medium text-blue-700">Tibco</p>
+                  <DateBadge start="Fév. 2003" end="Mai 2003" />
                 </div>
 
-                <DateBadge start="Fév. 2003" end="Mai 2003" />
+                <ul className="space-y-2 text-body text-gray-600">
+                  <li>• Application SQL Server 2000</li>
+                  <li>• Analyses DATA</li>
+                  <li>• Création DTS</li>
+                  <li>• Automatisation de requêtes</li>
+                </ul>
               </div>
-
-              <ul className="space-y-2 text-body text-gray-600">
-                <li>• Application SQL Server 2000</li>
-                <li>• Analyses DATA</li>
-                <li>• Création DTS</li>
-                <li>• Automatisation de requêtes</li>
-              </ul>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Formation Section */}
-      <section className="overflow-x-hidden py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="mb-12 text-heading-lg text-gray-900" data-reveal>
-            Formation
-          </h2>
+          {/* Formation */}
+          <div className="mt-20" data-reveal>
+            <h2 className="mb-8 text-heading-md text-gray-900">Formation</h2>
 
-          <div className="relative space-y-8 border-l-2 border-blue-100 pl-5 sm:pl-6">
-            {/* Current Formation */}
-            <div className="relative rounded-lg border border-gray-200 bg-white p-5 transition-shadow hover:shadow-lg sm:p-6">
-              <span className="absolute -left-[2.0625rem] top-7 h-3.5 w-3.5 rounded-full border-4 border-white bg-orange-500 shadow"></span>
+            <div className="relative space-y-8 border-l-2 border-blue-100 pl-5 sm:pl-6">
+              {/* Current Formation */}
+              <div className="relative rounded-lg border border-gray-200 bg-white p-5 transition-shadow hover:shadow-lg sm:p-6">
+                <span className="absolute -left-[2.0625rem] top-7 h-3.5 w-3.5 rounded-full border-4 border-white bg-orange-500 shadow"></span>
 
-              <div className="mb-4 flex min-w-0 items-start justify-between gap-3">
-                <div className="min-w-0 flex-1">
-                  <h3 className="break-words text-heading-md text-gray-900">
-                    Formation DWWM
-                  </h3>
+                <div className="mb-4 flex min-w-0 items-start justify-between gap-3">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="break-words text-heading-md text-gray-900">
+                      Formation DWWM
+                    </h3>
 
-                  <p className="text-body font-medium text-blue-700">
-                    Afec La Rochelle
-                  </p>
+                    <p className="text-body font-medium text-blue-700">
+                      Afec La Rochelle
+                    </p>
+                  </div>
+
+                  <DateBadge start="Mars 2025" end="Déc. 2025" />
                 </div>
 
-                <DateBadge start="Mars 2025" end="Déc. 2025" />
+                <p className="mb-3 text-body text-gray-600">
+                  Développeur Web et Web Mobile
+                </p>
+
+                <ul className="space-y-2 text-small text-gray-600">
+                  <li>• HTML5 / CSS3 / JavaScript</li>
+                  <li>• Responsive design mobile-first</li>
+                  <li>• Bootstrap, Git & GitHub</li>
+                  <li>• Notions : API REST, Node.js, MySQL</li>
+                </ul>
               </div>
 
-              <p className="mb-3 text-body text-gray-600">
-                Développeur Web et Web Mobile
-              </p>
+              {/* Past Formation */}
+              <div className="relative rounded-lg border border-gray-200 bg-white p-5 transition-shadow hover:shadow-lg sm:p-6">
+                <span className="absolute -left-[2.0625rem] top-7 h-3.5 w-3.5 rounded-full border-4 border-white bg-blue-700 shadow"></span>
 
-              <ul className="space-y-2 text-small text-gray-600">
-                <li>• HTML5 / CSS3 / JavaScript</li>
-                <li>• Responsive design mobile-first</li>
-                <li>• Bootstrap, Git & GitHub</li>
-                <li>• Notions : API REST, Node.js, MySQL</li>
-              </ul>
-            </div>
+                <div className="mb-4 flex min-w-0 items-start justify-between gap-3">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="break-words text-heading-md text-gray-900">
+                      TSIG
+                    </h3>
 
-            {/* Past Formation */}
-            <div className="relative rounded-lg border border-gray-200 bg-white p-5 transition-shadow hover:shadow-lg sm:p-6">
-              <span className="absolute -left-[2.0625rem] top-7 h-3.5 w-3.5 rounded-full border-4 border-white bg-blue-700 shadow"></span>
+                    <p className="text-body font-medium text-blue-700">
+                      Afpa Marseille
+                    </p>
+                  </div>
 
-              <div className="mb-4 flex min-w-0 items-start justify-between gap-3">
-                <div className="min-w-0 flex-1">
-                  <h3 className="break-words text-heading-md text-gray-900">
-                    TSIG
-                  </h3>
-
-                  <p className="text-body font-medium text-blue-700">
-                    Afpa Marseille
-                  </p>
+                  <DateBadge start="Juin 2002" end="Mai 2003" />
                 </div>
 
-                <DateBadge start="Juin 2002" end="Mai 2003" />
+                <ul className="space-y-2 text-small text-gray-600">
+                  <li>• Développement COBOL IBM</li>
+                  <li>• PowerBuilder</li>
+                  <li>• Analyse et traitement de données</li>
+                </ul>
               </div>
-
-              <ul className="space-y-2 text-small text-gray-600">
-                <li>• Développement COBOL IBM</li>
-                <li>• PowerBuilder</li>
-                <li>• Analyse et traitement de données</li>
-              </ul>
             </div>
           </div>
         </div>
@@ -558,7 +574,7 @@ export default function Home() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="py-20 bg-linear-to-br from-blue-700 to-blue-900"
+        className="py-24 lg:py-28 bg-linear-to-br from-blue-700 to-blue-900"
       >
         <div className="container text-center" data-reveal>
           <h2 className="text-heading-lg text-white mb-4">

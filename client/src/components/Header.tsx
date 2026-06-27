@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useEffect, useRef, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const logoRef = useRef<HTMLDivElement>(null);
   const previewImage = `${import.meta.env.BASE_URL}images/preview-messenger.png`;
   const logoImage = `${import.meta.env.BASE_URL}images/logo.png`;
@@ -16,31 +17,69 @@ export default function Header() {
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
+      if (event.key === "Escape") {
         setIsPreviewOpen(false);
       }
     };
 
-    document.addEventListener('pointerdown', handlePointerDown);
-    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      document.removeEventListener('pointerdown', handlePointerDown);
-      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
     };
+  }, []);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll<HTMLElement>("section[id]");
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "-30% 0px -60% 0px",
+        threshold: 0,
+      }
+    );
+
+    sections.forEach(section => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollBottom = window.innerHeight + window.scrollY;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      if (documentHeight - scrollBottom < 80) {
+        setActiveSection("contact");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setIsOpen(false);
       setIsPreviewOpen(false);
     }
   };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setIsOpen(false);
     setIsPreviewOpen(false);
   };
@@ -48,13 +87,16 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200">
       <nav className="container flex items-center justify-between h-16">
-        <div ref={logoRef} className="group/logo relative flex items-center gap-2">
+        <div
+          ref={logoRef}
+          className="group/logo relative flex items-center gap-2"
+        >
           <button
-  type="button"
-  onClick={() => setIsPreviewOpen((current) => !current)}
-  aria-expanded={isPreviewOpen}
-  aria-label="Afficher la carte de visite"
-  className="
+            type="button"
+            onClick={() => setIsPreviewOpen(current => !current)}
+            aria-expanded={isPreviewOpen}
+            aria-label="Afficher la carte de visite"
+            className="
     logo-spin-hint
     relative
     flex
@@ -74,14 +116,14 @@ export default function Header() {
     focus-visible:ring-blue-700
     focus-visible:ring-offset-2
   "
->
-  <img
-    src={logoImage}
-    alt=""
-    aria-hidden="true"
-    className="h-full w-full object-cover"
-  />
-</button>
+          >
+            <img
+              src={logoImage}
+              alt=""
+              aria-hidden="true"
+              className="h-full w-full object-cover"
+            />
+          </button>
 
           <button
             type="button"
@@ -93,7 +135,9 @@ export default function Header() {
 
           <div
             className={`absolute left-0 top-12 z-50 w-[min(calc(100vw-2rem),20rem)] translate-y-2 overflow-hidden rounded-lg border border-gray-200 bg-white opacity-0 shadow-2xl transition-all duration-200 group-hover/logo:translate-y-0 group-hover/logo:opacity-100 group-focus-within/logo:translate-y-0 group-focus-within/logo:opacity-100 ${
-              isPreviewOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none'
+              isPreviewOpen
+                ? "translate-y-0 opacity-100"
+                : "pointer-events-none"
             }`}
           >
             <button
@@ -110,7 +154,9 @@ export default function Header() {
               className="w-full bg-gray-50"
             />
             <div className="border-t border-gray-100 p-3">
-              <p className="text-sm font-semibold text-gray-900">Portfolio Wilfried Vogler</p>
+              <p className="text-sm font-semibold text-gray-900">
+                Portfolio Wilfried Vogler
+              </p>
               <p className="text-xs text-gray-600">Développeur Web Junior</p>
             </div>
           </div>
@@ -119,26 +165,46 @@ export default function Header() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-2">
           <button
-            onClick={() => scrollToSection('skills')}
-            className="rounded-lg border border-transparent px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-100 hover:bg-blue-50 hover:text-blue-700 hover:shadow-sm focus-visible:ring-2 focus-visible:ring-blue-700"
+            onClick={() => scrollToSection("skills")}
+            className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200
+    ${
+      activeSection === "skills"
+        ? "bg-blue-700 text-white shadow-md"
+        : "border border-transparent text-gray-700 hover:-translate-y-0.5 hover:border-blue-100 hover:bg-blue-50 hover:text-blue-700 hover:shadow-sm"
+    }`}
           >
             Compétences
           </button>
           <button
-            onClick={() => scrollToSection('projects')}
-            className="rounded-lg border border-transparent px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-100 hover:bg-blue-50 hover:text-blue-700 hover:shadow-sm focus-visible:ring-2 focus-visible:ring-blue-700"
+            onClick={() => scrollToSection("projects")}
+            className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200
+    ${
+      activeSection === "projects"
+        ? "bg-blue-700 text-white shadow-md"
+        : "border border-transparent text-gray-700 hover:-translate-y-0.5 hover:border-blue-100 hover:bg-blue-50 hover:text-blue-700 hover:shadow-sm"
+    }`}
           >
             Projets
           </button>
           <button
-            onClick={() => scrollToSection('parcours')}
-            className="rounded-lg border border-transparent px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-100 hover:bg-blue-50 hover:text-blue-700 hover:shadow-sm focus-visible:ring-2 focus-visible:ring-blue-700"
+            onClick={() => scrollToSection("parcours")}
+            className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200
+    ${
+      activeSection === "parcours"
+        ? "bg-blue-700 text-white shadow-md"
+        : "border border-transparent text-gray-700 hover:-translate-y-0.5 hover:border-blue-100 hover:bg-blue-50 hover:text-blue-700 hover:shadow-sm"
+    }`}
           >
             Parcours
           </button>
           <button
-            onClick={() => scrollToSection('contact')}
-            className="rounded-lg bg-blue-700 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-800 hover:shadow-md focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2"
+            onClick={() => scrollToSection("contact")}
+            className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200
+    ${
+      activeSection === "contact"
+        ? "bg-blue-700 text-white shadow-md"
+        : "border border-transparent text-gray-700 hover:-translate-y-0.5 hover:border-blue-100 hover:bg-blue-50 hover:text-blue-700 hover:shadow-sm"
+    }`}
           >
             Contact
           </button>
@@ -158,26 +224,46 @@ export default function Header() {
         <div className="md:hidden border-t border-gray-200 bg-white">
           <div className="container py-4 flex flex-col gap-3">
             <button
-              onClick={() => scrollToSection('skills')}
-              className="flex w-full items-center rounded-lg border border-gray-200 px-4 py-3 text-left font-medium text-gray-700 transition-all duration-200 hover:border-blue-100 hover:bg-blue-50 hover:text-blue-700 focus-visible:ring-2 focus-visible:ring-blue-700"
+              onClick={() => scrollToSection("skills")}
+              className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200
+    ${
+      activeSection === "skills"
+        ? "bg-blue-700 text-white shadow-md"
+        : "border border-transparent text-gray-700 hover:-translate-y-0.5 hover:border-blue-100 hover:bg-blue-50 hover:text-blue-700 hover:shadow-sm"
+    }`}
             >
               Compétences
             </button>
             <button
-              onClick={() => scrollToSection('projects')}
-              className="flex w-full items-center rounded-lg border border-gray-200 px-4 py-3 text-left font-medium text-gray-700 transition-all duration-200 hover:border-blue-100 hover:bg-blue-50 hover:text-blue-700 focus-visible:ring-2 focus-visible:ring-blue-700"
+              onClick={() => scrollToSection("projects")}
+              className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200
+    ${
+      activeSection === "projects"
+        ? "bg-blue-700 text-white shadow-md"
+        : "border border-transparent text-gray-700 hover:-translate-y-0.5 hover:border-blue-100 hover:bg-blue-50 hover:text-blue-700 hover:shadow-sm"
+    }`}
             >
               Projets
             </button>
             <button
-              onClick={() => scrollToSection('parcours')}
-              className="flex w-full items-center rounded-lg border border-gray-200 px-4 py-3 text-left font-medium text-gray-700 transition-all duration-200 hover:border-blue-100 hover:bg-blue-50 hover:text-blue-700 focus-visible:ring-2 focus-visible:ring-blue-700"
+              onClick={() => scrollToSection("parcours")}
+              className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200
+    ${
+      activeSection === "parcours"
+        ? "bg-blue-700 text-white shadow-md"
+        : "border border-transparent text-gray-700 hover:-translate-y-0.5 hover:border-blue-100 hover:bg-blue-50 hover:text-blue-700 hover:shadow-sm"
+    }`}
             >
               Parcours
             </button>
             <button
-              onClick={() => scrollToSection('contact')}
-              className="flex w-full items-center rounded-lg border border-blue-700 bg-blue-700 px-4 py-3 text-left font-semibold text-white transition-all duration-200 hover:bg-blue-800 hover:shadow-md focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2"
+              onClick={() => scrollToSection("contact")}
+              className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200
+    ${
+      activeSection === "contact"
+        ? "bg-blue-700 text-white shadow-md"
+        : "border border-transparent text-gray-700 hover:-translate-y-0.5 hover:border-blue-100 hover:bg-blue-50 hover:text-blue-700 hover:shadow-sm"
+    }`}
             >
               Contact
             </button>
